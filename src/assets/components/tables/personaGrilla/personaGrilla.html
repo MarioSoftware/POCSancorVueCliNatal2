@@ -16,7 +16,7 @@
                           ref="ABMtable"
                           v-on:unselected-row="selectedRow">
                     <div slot="toolbar">
-                        <app-botoneraTabla></app-botoneraTabla>       
+                        <app-botoneraTabla v-bind:selection="selection"></app-botoneraTabla>       
                     </div>
                 </nf-table>
             </div>

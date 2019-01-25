@@ -6,7 +6,8 @@ import AutomotorGrilla from './assets/components/tables/automotorGrilla'
 import MotovehiculoGrilla from './assets/components/tables/motovehiculoGrilla'
 import home from './assets/components/home.vue'
 import Layout from './assets/components/shared/layout' 
-import Botonera from './assets/components/shared/botonera'
+import Botonera from './assets/components/shared/botonera' 
+import FormularioPersona from './assets/components/forms/formularioPersona'
 
 //const Natal instance for
 const nfComponents = window.NF.superOptions.components;
@@ -18,6 +19,7 @@ for(var propertyName in nfComponents) {
 
  Vue.component('app-botoneraTabla',Botonera);
  Vue.component('app-layout',Layout);
+ Vue.component('app-formularioPersona',FormularioPersona);
  Vue.use(VueRouter);
 
 const routes = [

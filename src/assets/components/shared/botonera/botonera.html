@@ -2,11 +2,24 @@
 <div class="row">
 
   <div class="col-md-6" style="float:left" id="botonera">
-    <button  class="btn btn-primary" v-on:click="Nuevo()" >Nuevo</button>
-    <button  class="btn btn-primary" v-on:click="Detalle()"  >Detalle</button>
-    <button  class="btn btn-primary" v-on:click="Editar()"  >Editar</button>
-    <button  class="btn btn-danger"  v-on:click="Eliminar()"  >Eliminar</button>
+    <button  class="btn btn-primary" v-on:click="crudAction('c')" >Nuevo</button>
+    <button  class="btn btn-primary" v-on:click="crudAction('r')"  >Detalle</button>
+    <button  class="btn btn-primary" v-on:click="crudAction('u')"  >Editar</button>
+    <button  class="btn btn-danger"  v-on:click="crudAction('d')"  >Eliminar</button>
 </div>
-
+<div class="container">
+  <nf-modal ref="modal">
+      <span slot="title">{{crudTitle}}</span>
+      <div slot="body">
+          <app-formularioPersona v-bind:selection="selection"></app-formularioPersona>
+      </div>
+      <div slot="footer">
+          <button type="button" class="btn btn-danger"
+              v-on:click="closeModal()">Cancelar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+  </nf-modal>
+  </div>
 </div> 
 </div>
+ 

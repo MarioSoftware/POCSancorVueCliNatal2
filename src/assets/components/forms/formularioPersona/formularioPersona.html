@@ -1,0 +1,32 @@
+<form id="modalForm"  v-on:submit.prevent="formSubmition">
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text"
+               class="form-control"
+               name="name"
+               v-model="personDataDependencies.modal.Nombre"
+               data-fv-notempty="true"
+               data-fv-notempty-message="Debe elegir un Nombre" />
+    </div><br>
+    <div class="form-group">
+        <label for="pais">Pais</label>
+        <nf-autocomplete name="pais"
+                         v-model="personDataDependencies.selectedPais"
+                         v-bind:source="personDataDependencies.paisSource"
+                         v-bind:minimum-input-length="0"
+                         data-fv-callback="true"
+                         data-fv-callback-message="Debe seleccionar al menos un pais."
+                         data-fv-callback-callback="checkPaisSelected"></nf-autocomplete>
+    </div><br>
+    <div class="form-group">
+        <label for="provincia">Provincia</label>
+        <nf-autocomplete name="provincia"
+                         v-model="personDataDependencies.selectedProvince"
+                         v-bind:source="personDataDependencies.provinciaSource"
+                         v-bind:minimum-input-length="0" 
+                         data-fv-callback="true"
+                         data-fv-callback-message="Debe seleccionar al menos una provincia."
+                         data-fv-callback-callback="checkProvinceSelected"></nf-autocomplete>
+
+    </div>
+</form>
