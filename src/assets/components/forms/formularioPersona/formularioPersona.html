@@ -12,23 +12,34 @@
     <div class="form-group">
         <label for="pais">Pais</label>
         <nf-autocomplete name="pais"
-                         v-model="selectedPais"
+                         v-model="modal.Pais"
                          v-bind:source="paisSource"
                          v-bind:minimum-input-length="0"
                          data-fv-callback="true"
                          data-fv-callback-message="Debe seleccionar al menos un pais."
-                         data-fv-callback-callback="checkPaisSelected"></nf-autocomplete>
+                         ></nf-autocomplete>
     </div> <br>
     <div class="form-group">
         <label for="provincia">Provincia</label>
         <nf-autocomplete name="provincia"
-                         v-model="selectedProvince"
+                         v-model="modal.Provincia"
                          v-bind:source="provinciaSource"
                          v-bind:minimum-input-length="0" 
                          data-fv-callback="true"
                          data-fv-callback-message="Debe seleccionar al menos una provincia."
                          data-fv-callback-callback="checkProvinceSelected"></nf-autocomplete>
 
+    </div><br>
+    <div class="form-group">
+        <label for="localidad">Localidad</label>
+        <nf-autocomplete name="localidad"
+                         v-model="modal.Ciudad"
+                         v-bind:source="localidadSource"
+                         v-bind:minimum-input-length="0"
+                         data-fv-callback="true"
+                         data-fv-callback-message="Debe seleccionar al menos una localidad."
+                         data-fv-callback-callback="checkLocalitySelected"></nf-autocomplete>
     </div>
+    
 </form>
 </section>

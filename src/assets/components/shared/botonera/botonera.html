@@ -11,7 +11,7 @@
   <nf-modal ref="modal">
       <span slot="title">{{crudTitle}}</span>
       <div slot="body">
-          <app-formularioPersona v-bind:selection="selection"></app-formularioPersona>
+          <app-formularioPersona  v-bind:modal="modalDto"></app-formularioPersona>
       </div>
       <div slot="footer">
           <button type="button" class="btn btn-danger"

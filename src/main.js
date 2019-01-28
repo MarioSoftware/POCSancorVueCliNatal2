@@ -9,13 +9,19 @@ import Layout from './assets/components/shared/layout'
 import Botonera from './assets/components/shared/botonera' 
 import FormularioPersona from './assets/components/forms/formularioPersona'
 
+
 //const Natal instance for
 const nfComponents = window.NF.superOptions.components;
+const nfDirectives = window.NF.superOptions.directives;
 
+for(var propertyName in nfDirectives) {
+  Vue.directive(propertyName, nfDirectives[propertyName]);
+ }
 
 for(var propertyName in nfComponents) {
   Vue.component(propertyName, nfComponents[propertyName]);
  }
+window.NF.vm= new NF(new Vue());
 
  Vue.component('app-botoneraTabla',Botonera);
  Vue.component('app-layout',Layout);
@@ -41,3 +47,4 @@ new Vue({
   router,
   render: h => h(App)
 })
+
